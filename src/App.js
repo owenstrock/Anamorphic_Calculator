@@ -1382,6 +1382,9 @@ export default function AnamorphicCalculator() {
                 </div>
               )
             )}
+          </div>
+        </div>
+      </div>
       {/* COMPARE BUTTON - Digital */}
       {formatType === 'digital' && selectedCamera && sensorFormat && (anamorphicRatio || useCustomAnamorphic) && (desiredAspectRatio || useCustomAspectRatio) && comparisonTabs.length === 0 && (
         <div className="max-w-6xl mx-auto px-6 py-8 flex justify-center">
@@ -1410,10 +1413,10 @@ export default function AnamorphicCalculator() {
 
       {/* COMPARISON TABS */}
       {comparisonTabs.length > 0 && (
-        <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto px-6 py-16">
           {comparisonTabs.map((tab, index) => (
-            <div key={index} className="border border-black border-opacity-10 rounded-lg p-8 min-h-fit">
-              <div className="flex justify-between items-center mb-6">
+            <div key={index} className="mb-16 pb-16 border-t-2 border-black border-opacity-20 pt-16">
+              <div className="flex justify-between items-center mb-12">
                 <h2 className="text-black text-3xl font-bold">{formatType === 'digital' ? `CAMERA ${index + 2}` : `FORMAT ${index + 2}`}</h2>
                 <div className="flex gap-4 items-center">
                   <label className="flex items-center gap-2 cursor-pointer">
