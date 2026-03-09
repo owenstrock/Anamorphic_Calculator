@@ -888,7 +888,7 @@ export default function AnamorphicCalculator() {
             onClick={() => setFormatType('digital')}
             className={`px-6 py-2 rounded text-sm font-semibold transition-all border ${
               formatType === 'digital'
-                ? 'bg-black text-white border-black'
+                ? 'bg-green-600 text-white border-green-600'
                 : 'bg-white text-black border-black border-opacity-20 hover:border-opacity-40'
             }`}
           >
@@ -898,7 +898,7 @@ export default function AnamorphicCalculator() {
             onClick={() => setFormatType('film')}
             className={`px-6 py-2 rounded text-sm font-semibold transition-all border ${
               formatType === 'film'
-                ? 'bg-black text-white border-black'
+                ? 'bg-green-600 text-white border-green-600'
                 : 'bg-white text-black border-black border-opacity-20 hover:border-opacity-40'
             }`}
           >
@@ -1017,15 +1017,15 @@ export default function AnamorphicCalculator() {
                           {/* Crop overlays */}
                           {calculateDigital.croppedPixelHeight < calculateDigital.desqueezedHeight && (
                             <>
-                              <div className="absolute bg-gray-300 bg-opacity-100 top-0 left-0 w-full" style={{height: `${((calculateDigital.desqueezedHeight - calculateDigital.croppedPixelHeight) / calculateDigital.desqueezedHeight / 2) * 100}%`}} />
-                              <div className="absolute bg-gray-300 bg-opacity-100 bottom-0 left-0 w-full" style={{height: `${((calculateDigital.desqueezedHeight - calculateDigital.croppedPixelHeight) / calculateDigital.desqueezedHeight / 2) * 100}%`}} />
+                              <div className="absolute bg-black bg-opacity-40 top-0 left-0 w-full" style={{height: `${((calculateDigital.desqueezedHeight - calculateDigital.croppedPixelHeight) / calculateDigital.desqueezedHeight / 2) * 100}%`}} />
+                              <div className="absolute bg-black bg-opacity-40 bottom-0 left-0 w-full" style={{height: `${((calculateDigital.desqueezedHeight - calculateDigital.croppedPixelHeight) / calculateDigital.desqueezedHeight / 2) * 100}%`}} />
                             </>
                           )}
 
                           {calculateDigital.croppedPixelWidth < calculateDigital.usedPixelWidth && (
                             <>
-                              <div className="absolute bg-gray-300 bg-opacity-100 top-0 left-0 h-full" style={{width: `${((calculateDigital.usedPixelWidth - calculateDigital.croppedPixelWidth) / calculateDigital.usedPixelWidth / 2) * 100}%`}} />
-                              <div className="absolute bg-gray-300 bg-opacity-100 top-0 right-0 h-full" style={{width: `${((calculateDigital.usedPixelWidth - calculateDigital.croppedPixelWidth) / calculateDigital.usedPixelWidth / 2) * 100}%`}} />
+                              <div className="absolute bg-black bg-opacity-40 top-0 left-0 h-full" style={{width: `${((calculateDigital.usedPixelWidth - calculateDigital.croppedPixelWidth) / calculateDigital.usedPixelWidth / 2) * 100}%`}} />
+                              <div className="absolute bg-black bg-opacity-40 top-0 right-0 h-full" style={{width: `${((calculateDigital.usedPixelWidth - calculateDigital.croppedPixelWidth) / calculateDigital.usedPixelWidth / 2) * 100}%`}} />
                             </>
                           )}
 
@@ -1037,7 +1037,7 @@ export default function AnamorphicCalculator() {
                               y={`${Math.max(0, Math.min(100, ((calculateDigital.desqueezedHeight - calculateDigital.croppedPixelHeight) / calculateDigital.desqueezedHeight / 2) * 100))}%`}
                               width={`${Math.max(0, Math.min(100, (calculateDigital.croppedPixelWidth / calculateDigital.usedPixelWidth) * 100))}%`}
                               height={`${Math.max(0, Math.min(100, (calculateDigital.croppedPixelHeight / calculateDigital.desqueezedHeight) * 100))}%`}
-                              fill="#ffffff"
+                              fill="none"
                             />
                             {/* Green dashed border for cropped frame */}
                             <rect
@@ -1046,7 +1046,7 @@ export default function AnamorphicCalculator() {
                               width={`${Math.max(0, Math.min(100, (calculateDigital.croppedPixelWidth / calculateDigital.usedPixelWidth) * 100))}%`}
                               height={`${Math.max(0, Math.min(100, (calculateDigital.croppedPixelHeight / calculateDigital.desqueezedHeight) * 100))}%`}
                               fill="none"
-                              stroke="#22c55e"
+                              stroke="none"
                               strokeWidth="2"
                               strokeDasharray="5,5"
                             />
@@ -1056,23 +1056,23 @@ export default function AnamorphicCalculator() {
                     </div>
 
                     {/* Legend */}
-                    <div className="pt-4 border-t border-black border-opacity-10">
+                    <div className="pt-4 border-t border-green-100">
                       <p className="text-black text-opacity-60 text-xs font-bold mb-2">LEGEND</p>
                       <div className="grid grid-cols-2 gap-3 text-xs">
                         <div className="flex items-center gap-2">
                           <div className="w-3 h-3 border-4 border-blue-600 bg-white"></div>
-                          <span className="text-black text-opacity-60">Blue border (frame)</span>
+                          <span className="text-black text-opacity-60">Desqueezed: {calculateDigital.usedPixelWidth}×{calculateDigital.desqueezedHeight}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 border-2 border-dashed border-green-500 bg-white"></div>
-                          <span className="text-black text-opacity-60">Green line (crop)</span>
+                          <div className="w-3 h-3 bg-white border border-black border-opacity-20"></div>
+                          <span className="text-black text-opacity-60">Cropped: {calculateDigital.croppedPixelWidth}×{calculateDigital.croppedPixelHeight}</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Stats Grid - floats inside the section */}
                     <div className="grid grid-cols-2 gap-4 mt-6">
-                      <div className="bg-gray-100 border border-black border-opacity-15 rounded-lg p-6">
+                      <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                         <div className="text-black text-sm font-bold tracking-widest mb-2">UNSQUEEZED ASPECT</div>
                         <div className="text-2xl lg:text-3xl font-bold break-words text-black">{calculateDigital.naturalAspectRatio}:1</div>
                       </div>
@@ -1262,7 +1262,7 @@ export default function AnamorphicCalculator() {
                         </div>
 
                         {/* Legend */}
-                        <div className="pt-4 border-t border-black border-opacity-10">
+                        <div className="pt-4 border-t border-green-100">
                           <p className="text-black text-opacity-60 text-xs font-bold mb-2">LEGEND</p>
                           <div className="grid grid-cols-3 gap-3 text-xs">
                             <div className="flex items-center gap-2">
@@ -1455,7 +1455,7 @@ export default function AnamorphicCalculator() {
                                 }}
                               >
                                 <div
-                                  className="absolute border-3 border-yellow-400"
+                                  style={{display: "none"}}
                                   style={{
                                     left: `${Math.max(0, Math.min(100, ((calculateComparisonDigital(comparisonStates[index], index).usedPixelWidth - calculateComparisonDigital(comparisonStates[index], index).croppedPixelWidth) / calculateComparisonDigital(comparisonStates[index], index).usedPixelWidth / 2) * 100))}%`,
                                     top: `${Math.max(0, Math.min(100, ((calculateComparisonDigital(comparisonStates[index], index).usedPixelHeight - calculateComparisonDigital(comparisonStates[index], index).croppedPixelHeight) / calculateComparisonDigital(comparisonStates[index], index).usedPixelHeight / 2) * 100))}%`,
@@ -1518,13 +1518,28 @@ export default function AnamorphicCalculator() {
                             </div>
                           </div>
 
+                          {/* Legend */}
+                          <div className="pt-4 border-t border-green-100 mb-8">
+                            <p className="text-black text-opacity-60 text-xs font-bold mb-2">LEGEND</p>
+                            <div className="grid grid-cols-2 gap-3 text-xs">
+                              <div className="flex items-center gap-2">
+                                <div className="w-3 h-3 border-2 border-blue-600 bg-white"></div>
+                                <span className="text-black text-opacity-60">Desqueezed: {calculateComparisonDigital(comparisonStates[index], index).usedPixelWidth}×{calculateComparisonDigital(comparisonStates[index], index).usedPixelHeight}</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-3 h-3 bg-white border border-black border-opacity-20"></div>
+                                <span className="text-black text-opacity-60">Cropped: {calculateComparisonDigital(comparisonStates[index], index).croppedPixelWidth}×{calculateComparisonDigital(comparisonStates[index], index).croppedPixelHeight}</span>
+                              </div>
+                            </div>
+                          </div>
+
                           {/* Stats Grid */}
                           <div className="grid grid-cols-2 gap-4 mb-8">
-                            <div className="bg-gray-100 border border-black border-opacity-15 rounded-lg p-6">
+                            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                               <div className="text-black text-sm font-bold tracking-widest mb-2">UNSQUEEZED ASPECT</div>
                               <div className="text-2xl lg:text-3xl font-bold break-words text-black">{calculateComparisonDigital(comparisonStates[index], index).naturalAspectRatio}:1</div>
                             </div>
-                            <div className="bg-gray-100 border border-black border-opacity-15 rounded-lg p-6">
+                            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                               <div className="text-black text-sm font-bold tracking-widest mb-2">DESIRED OUTPUT</div>
                               <div className="text-2xl lg:text-3xl font-bold break-words text-black">{comparisonStates[index]?.desiredAspectRatio || desiredAspectRatio}:1</div>
                             </div>
