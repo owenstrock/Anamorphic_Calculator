@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Anamorphic_Calculator/static/js/main.a6e3fc20.js",
+    "main.js": "/Anamorphic_Calculator/static/js/main.ab4cccb8.js",
     "index.html": "/Anamorphic_Calculator/index.html",
-    "main.a6e3fc20.js.map": "/Anamorphic_Calculator/static/js/main.a6e3fc20.js.map"
+    "main.ab4cccb8.js.map": "/Anamorphic_Calculator/static/js/main.ab4cccb8.js.map"
   },
   "entrypoints": [
-    "static/js/main.a6e3fc20.js"
+    "static/js/main.ab4cccb8.js"
   ]
 }
