@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/anamorphic-calculator/static/js/main.b27b84b3.js",
-    "index.html": "/anamorphic-calculator/index.html",
-    "main.b27b84b3.js.map": "/anamorphic-calculator/static/js/main.b27b84b3.js.map"
+    "main.js": "/Anamorphic_Calculator/static/js/main.b27b84b3.js",
+    "index.html": "/Anamorphic_Calculator/index.html",
+    "main.b27b84b3.js.map": "/Anamorphic_Calculator/static/js/main.b27b84b3.js.map"
   },
   "entrypoints": [
     "static/js/main.b27b84b3.js"
