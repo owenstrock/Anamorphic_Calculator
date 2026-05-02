@@ -1,0 +1,55 @@
+{
+  "name": "anamorphic-calculator",
+  "version": "3.0.0",
+  "description": "Anamorphic lens calculator for digital and film",
+  "private": true,
+  "dependencies": {
+    "lucide-react": "^0.263.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "https://owenstrock.github.io/Anamorphic_Calculator",
+  "main": "index.js",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "gh-pages": "^6.3.0",
+    "jest": "^27.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://owenstrock: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@github.com/owenstrock/Anamorphic_Calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/owenstrock/Anamorphic_Calculator/issues"
+  }
+}
